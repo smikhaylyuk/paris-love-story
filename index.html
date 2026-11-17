@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f1f1f">
+  <meta name="description" content="S & S | Paris Love Story. A photography collection by Photo_paris_dreams by Tanya, 15 October 2026.">
+  <meta property="og:title" content="S & S | Paris Love Story">
+  <meta property="og:description" content="Paris, together. Photographs by Photo_paris_dreams by Tanya.">
+  <meta property="og:image" content="assets/cover.jpg">
+  <title>S & S | Paris Love Story</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/cover.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="gallery-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#gallery">Skip to photographs</a>
+  <header class="cover" id="top">
+    <div class="cover-image" role="img" aria-label="S and S holding hands on the steps overlooking the Eiffel Tower"></div>
+    <div class="cover-text">
+      <h1>S &amp; S | Paris Love Story</h1>
+      <p><time datetime="2026-10-15">15 October 2026</time></p>
+    </div>
+  </header>
+
+  <nav class="gallery-bar" aria-label="Gallery tools">
+    <a class="photographer" href="https://20931-tetiana-bidna.gallera.io/" target="_blank" rel="noopener noreferrer">
+      <img src="assets/photographer.jpg" alt="" width="34" height="34">
+      <span>Photo_paris_dreams by Tanya</span>
+    </a>
+    <p class="archive-note"><svg aria-hidden="true"><use href="#icon-calendar"/></svg><span>Gallery is being saved to <strong>22 November 2026</strong></span></p>
+    <div class="toolbar">
+      <button class="tool" id="favorites-filter" type="button" aria-pressed="false" title="Show favorites"><svg aria-hidden="true"><use href="#icon-heart"/></svg><span class="tool-label">Favorites</span><span id="favorites-count" hidden></span></button>
+      <button class="tool" id="share-gallery" type="button" title="Share gallery"><svg aria-hidden="true"><use href="#icon-share"/></svg><span class="tool-label">Share</span></button>
+      <button class="tool download-tool" id="download-gallery" type="button" title="Download gallery"><svg aria-hidden="true"><use href="#icon-download"/></svg><span class="tool-label">Download</span></button>
+    </div>
+  </nav>
+
+  <main id="gallery" tabindex="-1">
+    <div class="filter-status" id="filter-status" hidden><span id="filter-summary"></span><button id="show-all" type="button">Show all photos</button></div>
+    <div class="photo-grid" id="photo-grid" aria-label="Paris Love Story photographs"></div>
+    <div class="empty-state" id="empty-state" hidden><svg aria-hidden="true"><use href="#icon-heart"/></svg><h2>Your favorite moments</h2><p>Tap the heart on a photograph to save it here.</p></div>
+    <noscript><p class="noscript">Please enable JavaScript to view the photograph gallery.</p></noscript>
+  </main>
+
+  <footer>
+    <a class="footer-photographer" href="https://20931-tetiana-bidna.gallera.io/" target="_blank" rel="noopener noreferrer"><img src="assets/photographer.jpg" width="64" height="64" alt="Photographer Tanya"><span>Photo_paris_dreams by Tanya</span></a>
+    <a class="profile-link" href="https://20931-tetiana-bidna.gallera.io/" target="_blank" rel="noopener noreferrer">Author’s profile <span aria-hidden="true">↗</span></a>
+    <p class="credit">Photography gallery · <a href="https://20931-tetiana-bidna.gallera.io/s-s-paris-love-story" target="_blank" rel="noopener noreferrer">Original collection on Gallera</a></p>
+  </footer>
+  <button class="back-to-top icon-button" id="back-to-top" type="button" aria-label="Back to top" hidden><svg aria-hidden="true"><use href="#icon-up"/></svg></button>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photograph viewer">
+    <div class="lightbox-bar">
+      <span id="photo-position" class="photo-position" aria-live="polite"></span>
+      <div class="lightbox-tools">
+        <button class="icon-button" id="lightbox-favorite" type="button" aria-label="Add to favorites" aria-pressed="false"><svg aria-hidden="true"><use href="#icon-heart"/></svg></button>
+        <a class="icon-button" id="lightbox-download" aria-label="Download photograph" download><svg aria-hidden="true"><use href="#icon-download"/></svg></a>
+        <button class="icon-button" id="lightbox-share" type="button" aria-label="Share photograph"><svg aria-hidden="true"><use href="#icon-share"/></svg></button>
+        <button class="icon-button" id="lightbox-close" type="button" aria-label="Close photograph viewer" autofocus><svg aria-hidden="true"><use href="#icon-close"/></svg></button>
+      </div>
+    </div>
+    <button class="lightbox-arrow previous icon-button" id="previous-photo" type="button" aria-label="Previous photograph"><svg aria-hidden="true"><use href="#icon-left"/></svg></button>
+    <div class="lightbox-image-wrap" id="lightbox-image-wrap"><img id="lightbox-image" alt=""></div>
+    <button class="lightbox-arrow next icon-button" id="next-photo" type="button" aria-label="Next photograph"><svg aria-hidden="true"><use href="#icon-right"/></svg></button>
+    <p class="photo-caption" id="photo-caption"></p>
+  </dialog>
+
+  <dialog class="modal" id="share-dialog" aria-labelledby="share-title">
+    <button class="modal-close icon-button" data-close="share-dialog" type="button" aria-label="Close sharing"><svg aria-hidden="true"><use href="#icon-close"/></svg></button>
+    <svg class="modal-icon" aria-hidden="true"><use href="#icon-share"/></svg>
+    <h2 id="share-title">Share this story</h2><p>A little Paris, a lot of love.</p>
+    <label for="share-url">Gallery link</label><div class="copy-field"><input id="share-url" type="url" readonly><button class="primary-button" id="copy-link" type="button">Copy link</button></div>
+    <button class="secondary-button" id="native-share" type="button" hidden>More sharing options</button>
+  </dialog>
+
+  <dialog class="modal" id="download-dialog" aria-labelledby="download-title">
+    <button class="modal-close icon-button" data-close="download-dialog" type="button" aria-label="Close downloads"><svg aria-hidden="true"><use href="#icon-close"/></svg></button>
+    <svg class="modal-icon" aria-hidden="true"><use href="#icon-download"/></svg>
+    <h2 id="download-title">Keep these moments</h2><p>Save a ZIP of the photographs to your device.</p>
+    <fieldset class="download-options"><legend>Choose photographs</legend><label><input type="radio" name="download-selection" value="all" checked><span>All photographs <small id="download-total"></small></span></label><label><input type="radio" name="download-selection" value="favorites"><span>My favorites <small id="download-favorites"></small></span></label></fieldset>
+    <p class="download-note">Web-resolution photographs. Individual photos can also be downloaded from the viewer.</p>
+    <button class="primary-button wide" id="start-download" type="button">Download photographs</button>
+    <div id="download-progress" hidden><progress id="zip-progress" max="100" value="0"></progress><p id="download-status" role="status"></p></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M3 13v8h18v-8M12 3v13m-5-5 5 5 5-5"/></symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="4" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="20" r="3"/><path d="m8.6 10.5 6.8-5m-6.8 8 6.8 5"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="icon-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="icon-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="icon-up" viewBox="0 0 24 24"><path d="m5 15 7-7 7 7"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6m10-6v6M3 11h18m-12 5 2 2 4-4"/></symbol>
+  </svg>
+</body>
+</html>

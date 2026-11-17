@@ -1,0 +1,10 @@
+{
+  "name": "paris-love-story",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A self-contained copy of the S & S Paris Love Story photography gallery",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node --check app.js && node --check gallery-data.js && node --check scripts/serve.mjs"
+  }
+}
